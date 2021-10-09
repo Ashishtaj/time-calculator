@@ -1,0 +1,66 @@
+start = start.split()
+meridiem = start[1]
+meridiem = meridiem.upper()
+time = start[0]
+new_day = int(new_hour / 24)  
+new_day = new_hour // 24  
+new_day = new_day % 7
+elif new_day == 1:
+            day_index += 1
+            day = days_of_week[day_index]
+            new_time = f"{new_hour}:{new_minute} {new_meridiem}, {day} {day_statement}"
+        # Logic / Return statement if more than next day and cutting to the next week
+        elif new_day > 1:
+            if new_day + day_index >= 7:
+                new_day = day_index - new_day
+                day_index = 0
+            while new_day > 0:
+                new_day -= 1
+                day_index += 1
+            day = days_of_week[day_index]
+            new_time = f"{new_hour}:{new_minute} {new_meridiem}, {day} {day_statement}"
+       else:
+            day = days_of_week[(day_index + new_day) % 7]
+            new_time = f"{new_hour}:{new_minute} {new_meridiem}, {day} {day_statement}"
+            
+def add_time(start, duration, day=None):
+day = day[0]
+if day:
+        return new_time
+    else:
+        if day_statement == "":
+            new_time = f"{new_hour}:{new_minute} {new_meridiem}"
+        else:
+            new_time = (
+                f"{new_hour}:{new_minute} {new_meridiem} {day_statement}"
+                )
+ if new_day == 1:
+            day_statement = " (next day)"
+        if new_day > 1:
+            day_statement = f" ({new_day} days later)"
+             if day:
+
+        day = day.capitalize()
+ 
+        day_index = days_of_week.index(day)
+   
+
+        new_day = new_day % 7
+   
+        if new_day == 0:
+            new_time = f"{new_hour}:{new_minute} {new_meridiem}, {day}"
+    
+        else:
+            day_of_week = days_of_week[(day_index + new_day) % 7]
+            new_time = f"{new_hour}:{new_minute} {new_meridiem}, {day_of_week} {day_statement}"
+            
+           if day:
+      
+        day = day.capitalize()
+     
+        day_index = days_of_week.index(day)
+
+        new_day = new_day % 7
+        day_of_week = f", {days_of_week[(day_index + new_day) % 7]}"
+    
+new_time = f"{new_hour}:{new_minute} {new_meridiem}{day_of_week}{day_statement}"
